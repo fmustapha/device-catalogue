@@ -9,6 +9,8 @@ import Home from '../Home';
 import Watches from '../Watches';
 import NotFound from '../NotFound';
 
+import CSSReset from '@tds/core-css-reset'
+
 const App = () => (
   <Router>
     <Switch>
