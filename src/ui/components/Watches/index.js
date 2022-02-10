@@ -6,7 +6,8 @@ import FlexGrid from "@tds/core-flex-grid";
 import Card from "@tds/core-card";
 import Image from "@tds/core-image";
 import PriceLockup from "@tds/core-price-lockup";
-import HairlineDivider from "@tds/core-hairline-divider";
+import { FootnoteLink } from "@tds/core-terms-and-conditions";
+import Box from "@tds/core-box";
 import Text from "@tds/core-text";
 import Strong from "@tds/core-strong";
 
@@ -47,18 +48,33 @@ const Watches = () => {
                     height={0}
                     alt="Image of a watch"
                   />
-                  <br />
-                  <Strong>{watch.brand}</Strong>
-                  <Heading level="h3">{watch.name}</Heading>
+                  <Box>
+                    <Strong>{watch.brand}</Strong>
+                  </Box>
+                  <Box>
+                    <Heading level="h2">{watch.name}</Heading>
+                  </Box>
                   <PriceLockup
                     size="medium"
                     price={getMonthlyPrice(watch.price)}
-                    rateText="per month"
-                    bottomText="for 24 months, then $75 per month"
                     signDirection="left"
+                    a11yText={`${getMonthlyPrice(
+                      watch.price
+                    )} dollars per month`}
                   />
-                  <HairlineDivider />
-                  <Text>Retails price: {watch.price}</Text>
+                  <Box between={4}>
+                    <Text>/mo.</Text>
+                    <Text>
+                      Get 3 months of Apple Fitness+
+                      <FootnoteLink
+                        number={[5]}
+                        onClick={(number, ref) => {}}
+                        copy="en"
+                      />
+                      free when you buy Apple Watch.
+                    </Text>
+                    <Text>Retails price: {watch.price}</Text>
+                  </Box>
                 </Card>
               </FlexGrid.Col>
             ))}
