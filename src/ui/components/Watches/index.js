@@ -34,7 +34,7 @@ const Watches = () => {
   return (
     <React.Fragment>
       <Heading level="h1">Watches</Heading>
-      {!watches.length && <p>No Watches found</p>}
+      {!watches.length && <Text>No Watches found</Text>}
       {watches.length && (
         <FlexGrid>
           <FlexGrid.Row horizontalAlign="start">
@@ -50,8 +50,6 @@ const Watches = () => {
                   />
                   <Box>
                     <Strong>{watch.brand}</Strong>
-                  </Box>
-                  <Box>
                     <Heading level="h2">{watch.name}</Heading>
                   </Box>
                   <PriceLockup

@@ -34,7 +34,7 @@ const IPhones = () => {
   return (
     <React.Fragment>
       <Heading level="h1">iPhones</Heading>
-      {!iphones.length && <p>No iphones found</p>}
+      {!iphones.length && <Text>No iphones found</Text>}
       {iphones.length && (
         <FlexGrid>
           <FlexGrid.Row horizontalAlign="start">
@@ -50,8 +50,6 @@ const IPhones = () => {
                   />
                   <Box>
                     <Strong>{iphone.brand}</Strong>
-                  </Box>
-                  <Box>
                     <Heading level="h2">{iphone.name}</Heading>
                   </Box>
                   <PriceLockup
